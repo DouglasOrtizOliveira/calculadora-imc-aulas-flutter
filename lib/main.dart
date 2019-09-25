@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calculadora_imc/Person.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -15,21 +16,27 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+
   TextEditingController _weightController = TextEditingController();
   TextEditingController _heightController = TextEditingController();
-  String _result;
-
+  
+  Person _person = Person();
+  
   @override
   void initState() {
     super.initState();
     resetFields();
   }
 
+  
   void resetFields() {
     _weightController.text = '';
     _heightController.text = '';
+    _results = 0;
     setState(() {
-      _result = 'Informe seus dados';
+      _person.result = 'Informe seus dados';
+      _person.resultimc = "";
+      _person.color = Colors.black;
     });
   }
 
@@ -45,7 +52,7 @@ class _HomeState extends State<Home> {
   AppBar buildAppBar() {
     return AppBar(
       title: Text('Calculadora de IMC'),
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.black26,
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.refresh),
@@ -63,6 +70,7 @@ class _HomeState extends State<Home> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          sexButton(),
           buildTextFormField(
               label: "Peso (kg)",
               error: "Insira seu peso!",
@@ -78,27 +86,78 @@ class _HomeState extends State<Home> {
     );
   }
 
-  void calculateImc() {
-    double weight = double.parse(_weightController.text);
-    double height = double.parse(_heightController.text) / 100.0;
-    double imc = weight / (height * height);
 
+    int _results = 0;
+  int _buttonValue;
+  
+  void _handleButtonValueChange(int value) {
     setState(() {
-      _result = "IMC = ${imc.toStringAsPrecision(2)}\n";
-      if (imc < 18.6)
-        _result += "Abaixo do peso";
-      else if (imc < 25.0)
-        _result += "Peso ideal";
-      else if (imc < 30.0)
-        _result += "Levemente acima do peso";
-      else if (imc < 35.0)
-        _result += "Obesidade Grau I";
-      else if (imc < 40.0)
-        _result += "Obesidade Grau II";
-      else
-        _result += "Obesidade Grau IIII";
+      _buttonValue = value;
+  
+      switch (_buttonValue) {
+        case 0:
+          _results = 1;
+          break;
+        case 1:
+          _results = 2;
+          break;
+      }
     });
   }
+
+
+  void calculateImc() {
+   _person.weight = double.parse(_weightController.text);
+   _person.heigth = double.parse(_heightController.text) / 100.0;
+  
+  
+    _person.imc = _person.calcularImc();
+    setState(() {
+      if(_results == 1){
+          _person.calcMasc();
+        }else if(_results == 2){
+          _person.calcFem();
+        }else{
+         _person.msgErro(context);
+        }
+    });
+    
+  }
+   
+   Widget sexButton(){
+    return Padding(
+        padding: EdgeInsets.symmetric(vertical: 0.01),
+       child: new Row(
+       mainAxisAlignment: MainAxisAlignment.center ,
+       children: <Widget>[
+          new Radio(
+            value: 0,
+            groupValue: _buttonValue,
+            onChanged: _handleButtonValueChange,
+          ),
+          new Text(
+            'Masculino',
+            style: new TextStyle(
+            fontSize: 20.0,
+            ),
+          ),
+          new Radio(
+            activeColor: Colors.pink,
+            value: 1,
+             groupValue: _buttonValue,
+            onChanged: _handleButtonValueChange,
+          ),
+          new Text(
+            'Feminino',
+            style: new TextStyle(
+            fontSize: 20.0,
+            ),
+          ),
+        ]
+     ),
+   );
+  }
+
 
   Widget buildCalculateButton() {
     return Padding(
@@ -109,18 +168,34 @@ class _HomeState extends State<Home> {
             calculateImc();
           }
         },
-        child: Text('CALCULAR', style: TextStyle(color: Colors.white)),
+        child: Text('CALCULAR', style: TextStyle(color: Colors.black87)),
       ),
     );
   }
 
   Widget buildTextResult() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 36.0),
-      child: Text(
-        _result,
-        textAlign: TextAlign.center,
-      ),
+      padding: EdgeInsets.symmetric(vertical: 25.0),
+      child: new Column(
+        
+        mainAxisAlignment: MainAxisAlignment.center ,
+        children: <Widget>[
+        
+        Text(
+       _person.resultimc,
+        textAlign: TextAlign.center, 
+        style: TextStyle(color: Colors.black, fontSize: 36.0, fontWeight: FontWeight.bold),
+    ),
+   
+    new Text(
+      _person.result,
+        textAlign: TextAlign.right,
+        
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300, color: _person.color),  
+    
+        ),
+      ],
+     ),
     );
   }
 
