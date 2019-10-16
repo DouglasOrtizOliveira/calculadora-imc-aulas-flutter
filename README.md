@@ -15,17 +15,17 @@ Tutorial de criação deste app: http://bit.ly/2Zry7Uh
 
 ## Desafio para aula
 
-[x]   Adicionar botões (Toggle ou Radio button) para escolha de gênero ([masculino](https://indicedemassacorporal.com/movel/calculo-imc-masculino.html) / [feminino](https://indicedemassacorporal.com/movel/calculo-imc-feminino.html));
+[X]   Adicionar botões (Toggle ou Radio button) para escolha de gênero ([masculino](https://indicedemassacorporal.com/movel/calculo-imc-masculino.html) / [feminino](https://indicedemassacorporal.com/movel/calculo-imc-feminino.html));
 
-[x]   Corrigir o calculo de acordo com o gênero (masculino e feminino);
+[X]   Corrigir o calculo de acordo com o gênero (masculino e feminino);
 
-[x]   Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar;
+[X]   Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar;
 
-[x]   Refatorar o código do aplicativo para utilizar a classe Pessoa;
+[X]   Refatorar o código do aplicativo para utilizar a classe Pessoa;
 
-[x]   Aplicar uma escala de cores para o resultado da classificação do IMC;
+[X]   Aplicar uma escala de cores para o resultado da classificação do IMC;
 
-[x]   Aumentar o texto do resultado do IMC (número) e também colocar em negrito.
+[X]   Aumentar o texto do resultado do IMC (número) e também colocar em negrito.
 
 ## Licença
 
