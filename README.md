@@ -7,7 +7,7 @@ Tutorial de criação deste app: http://bit.ly/2Zry7Uh
 <p align="center">
     <img src="https://github.com/douglasortizdeoliveira/calculadora-imc-aulas-flutter/blob/master/images/screenshot_1.png" height="400"/>
 	<img src="https://github.com/douglasortizdeoliveira/calculadora-imc-aulas-flutter/blob/master/images/screenshot_2.png" height="400"/>
-	<img src="https://github.com/douglasortizdeoliveira/calculadora-imc-aulas-flutter/blob/master/images/screenshot_3.png" height="400"/>
+	<img src="https://github.com/douglasortizdeoliveira/calculadora-imc-aulas-flutter/master/images/screenshot_3.png" height="400"/>
 </p>
 
 
