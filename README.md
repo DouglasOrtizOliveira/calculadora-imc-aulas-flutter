@@ -5,7 +5,7 @@ Aplicativo de uma calculadora de IMC criado para disciplina de Programação Mob
 Tutorial de criação deste app: http://bit.ly/2Zry7Uh
 
 <p align="center">
-    <img src="https://miro.medium.com/max/1440/1*VzcayMW3lUkbyc9DRSHcGA.png" weight="800"/>
+    <img src="https://ibb.co/pyRzmrY"/>
 </p>
 
 ## Como clonar e importar
