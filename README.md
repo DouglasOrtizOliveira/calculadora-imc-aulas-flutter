@@ -5,7 +5,7 @@ Aplicativo de uma calculadora de IMC criado para disciplina de Programação Mob
 Tutorial de criação deste app: http://bit.ly/2Zry7Uh
 
 <p align="center">
-    <img src="https://ibb.co/pyRzmrY"/>
+    <img src="https://miro.medium.com/max/1440/1*VzcayMW3lUkbyc9DRSHcGA.png" weight="800"/>
 </p>
 
 ## Como clonar e importar
@@ -15,17 +15,17 @@ Tutorial de criação deste app: http://bit.ly/2Zry7Uh
 
 ## Desafio para aula
 
-[X]   Adicionar botões (Toggle ou Radio button) para escolha de gênero ([masculino](https://indicedemassacorporal.com/movel/calculo-imc-masculino.html) / [feminino](https://indicedemassacorporal.com/movel/calculo-imc-feminino.html));
+- [X]   Adicionar botões (Toggle ou Radio button) para escolha de gênero ([masculino](https://indicedemassacorporal.com/movel/calculo-imc-masculino.html) / [feminino](https://indicedemassacorporal.com/movel/calculo-imc-feminino.html));
 
-[X]   Corrigir o calculo de acordo com o gênero (masculino e feminino);
+- [X]   Corrigir o calculo de acordo com o gênero (masculino e feminino);
 
-[X]   Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar;
+- [X]   Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar;
 
-[X]   Refatorar o código do aplicativo para utilizar a classe Pessoa;
+- [X]   Refatorar o código do aplicativo para utilizar a classe Pessoa;
 
-[X]   Aplicar uma escala de cores para o resultado da classificação do IMC;
+- [X]   Aplicar uma escala de cores para o resultado da classificação do IMC;
 
-[X]   Aumentar o texto do resultado do IMC (número) e também colocar em negrito.
+- [X]   Aumentar o texto do resultado do IMC (número) e também colocar em negrito.
 
 ## Licença
 
